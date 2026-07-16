@@ -1,17 +1,23 @@
 {
   "name": "postres-ia",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "frontend"
-  ],
   "scripts": {
-    "install:all": "npm install --workspaces",
-    "dev": "npm --workspace frontend run dev",
-    "build": "npm --workspace frontend run build",
-    "start": "npm --workspace frontend run start",
-    "lint": "npm --workspace frontend run lint"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "description": "Monorepo for Postres-IA (frontend + backend)",
-  "license": "MIT"
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.5.2",
+    "postcss": "8.5.19",
+    "tailwindcss": "3.4.19",
+    "eslint": "8.57.1",
+    "eslint-config-next": "14.2.5"
+  }
 }

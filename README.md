@@ -84,14 +84,25 @@ postres-ia/
 ├── README.md
 ├── .gitignore
 ├── .editorconfig
-│
+├── package.json
+├── next.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── jsconfig.json
+├── .env.local
+├── public/
+│   └── .gitkeep
+├── src/
+│   ├── app/                # Rutas (home, /recetas, /recetas/[id])
+│   ├── components/         # RecipeGenerator, RecipeCard, ShareButtons
+│   └── lib/                # Cliente de API
 ├── backend/                    # API en PHP + MySQL (Apache)
 │   ├── composer.json
 │   ├── .env.example
 │   ├── .htaccess
 │   ├── public/                 # Document root público
 │   │   ├── index.php           # Front controller / router
-│   │   └── .htaccess           # Reescritura a index.php (con soporte VirtualHost)
+│   │   └── .htaccess           # Reescritura a index.php
 │   ├── src/
 │   │   ├── Config/             # Conexión a BD, carga de config
 │   │   ├── Core/               # Router, Request, Response
@@ -101,19 +112,6 @@ postres-ia/
 │   │   └── Models/             # Recipe, EventLog
 │   ├── admin/                  # Back office (PHP server-rendered)
 │   └── logs/                   # Logs de errores/eventos
-│
-├── frontend/                   # App Next.js (App Router)
-│   ├── package.json
-│   ├── next.config.js
-│   ├── tailwind.config.js
-│   ├── postcss.config.js
-│   ├── jsconfig.json
-│   ├── .env.local.example
-│   ├── public/
-│   └── src/
-│       ├── app/                # Rutas (home, /recetas, /recetas/[id])
-│       ├── components/         # RecipeGenerator, RecipeCard, ShareButtons
-│       └── lib/                # Cliente de API
 │
 ├── database/
 │   ├── schema.sql              # Estructura de tablas
@@ -165,7 +163,6 @@ Endpoints (con VirtualHost):
 ### 2. Frontend (Next.js)
 
 ```bash
-cd frontend
 cp .env.local.example .env.local   # define NEXT_PUBLIC_API_URL=http://localhost/api-postres-ai
 npm install
 npm run dev                        # http://localhost:3000
@@ -220,6 +217,9 @@ NEXT_PUBLIC_API_URL=http://localhost/api-postres-ai
 NEXT_PUBLIC_API_BASE_PATH=http://localhost/api-postres-ai
 NEXT_PUBLIC_ADS_ENABLED=false
 ```
+
+> **Nota**: El frontend ahora está en la raíz del proyecto. Configura un VirtualHost separado
+para servir Next.js (ej: `http://localhost:3000`) o usa `npm run dev` para desarrollo.
 
 ---
 
