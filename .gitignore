@@ -1,0 +1,24 @@
+# Dependencias
+/frontend/node_modules/
+/backend/vendor/
+
+# Builds
+/frontend/.next/
+/frontend/out/
+
+# Entorno
+**/.env
+**/.env.local
+!**/.env.example
+!**/.env.local.example
+
+# Logs
+/backend/logs/*.log
+*.log
+
+# SO / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules

@@ -1,0 +1,13 @@
+{
+  "name": "postres-ia/backend",
+  "description": "API PHP para generacion y almacenamiento de recetas de postres con IA",
+  "type": "project",
+  "require": {
+    "php": ">=8.1",
+    "ext-curl": "*",
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": { "App\\": "src/" }
+  }
+}

@@ -1,0 +1,5 @@
+# En produccion, apunta el DocumentRoot a backend/public/.
+# Este archivo solo redirige si el DocumentRoot quedara en la raiz de backend/.
+RewriteEngine On
+RewriteRule ^$ public/ [L]
+RewriteRule (.*) public/$1 [L]

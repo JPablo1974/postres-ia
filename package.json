@@ -1,0 +1,17 @@
+{
+  "name": "postres-ia",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "dev": "npm --workspace frontend run dev",
+    "build": "npm --workspace frontend run build",
+    "start": "npm --workspace frontend run start",
+    "lint": "npm --workspace frontend run lint"
+  },
+  "description": "Monorepo for Postres-IA (frontend + backend)",
+  "license": "MIT"
+}
